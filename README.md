@@ -1,3 +1,5 @@
+=== RUS ===
+
 ## 🔐 Квантовый криптографический симулятор BB84
 
 Интерактивный образовательный симулятор протокола квантового распределения ключей BB84 с графическим интерфейсом. Проект предназначен для изучения основ квантовой криптографии, влияния шума канала (декогеренции) и атак перехвата (Eve's attack) на безопасность связи.
@@ -80,3 +82,98 @@ GUI: tkinter, ttk
   Расширение функционала симулятора для работы с протоколами на запутанных состояниях (например, E91) или протоколом SARG04.
 # 📊 Экспорт данных: 
   Добавление возможности выгрузки результатов экспериментов (таблиц QBER, значений σ) в форматы .csv или .xlsx для дальнейшей независимой статистической обработки.
+
+=== ENG ===
+
+## 🔐 BB84 Quantum Cryptography Simulator
+
+An interactive educational simulator for the BB84 quantum key distribution protocol with a graphical user interface. This project is designed to study the fundamentals of quantum cryptography, the impact of channel noise (decoherence), and interception attacks (Eve's attack) on communication security.
+
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Qiskit](https://img.shields.io/badge/Qiskit-Optional-purple.svg)
+
+## 📸 Screenshots
+ 1. BB84 Tab:
+   <img width="1247" height="1079" alt="image" src="https://github.com/user-attachments/assets/c7e0025f-ca8a-4cd5-8570-a3f7c33d3ebc" />
+ 2. Eve's Attack:
+   <img width="1247" height="1076" alt="image" src="https://github.com/user-attachments/assets/5bc8c3b2-89ce-4dcb-b553-c088c94cd587" />
+ 3. Key Generation and Comparison:
+   <img width="1247" height="1075" alt="image" src="https://github.com/user-attachments/assets/bb1bc241-0bbf-4cd9-bbd1-50b4156193ef" />
+ 4. Graphs:
+   <img width="1247" height="1079" alt="image" src="https://github.com/user-attachments/assets/4ed1427f-465b-48e9-8d49-f9c3210aff0b" />
+ 5. Measurement Results and Conclusions:
+   <img width="1250" height="1079" alt="image" src="https://github.com/user-attachments/assets/0a87da2f-a2e6-42d2-bac4-55545b7c92f4" />
+
+##  Features
+- **BB84 Protocol Simulation:** Quantum key generation accounting for Alice and Bob's basis choices.
+- **Channel Noise Modeling:** Configurable natural noise (decoherence) level with observation of its impact on QBER (Quantum Bit Error Rate).
+- **Eve's Attack:** Visualization of photon interception demonstrating why eavesdropping in quantum cryptography always leaves traces (detection threshold ~11%).
+- **Entropy Generation:** Comparison of a simple random number generator with a hybrid method (time, chaotic systems, system parameters).
+- **Visualization:** Plotting QBER dependence on attack strength using `matplotlib`.
+- **Qiskit Support:** If the Qiskit library is installed, the simulation uses real quantum circuits (state vectors); otherwise, it operates in a simplified probabilistic mode.
+
+## 🚀 Installation and Launch
+
+```bash
+# 1. Clone the repository and navigate to its folder
+git clone https://github.com/gendgg/project.git
+cd project
+
+# 2. Create and activate a virtual environment (recommended for dependency isolation)
+# For Windows:
+python -m venv venv && venv\Scripts\activate
+# For macOS / Linux:
+# python3 -m venv venv && source venv/bin/activate
+
+# 3. Install all required libraries from requirements.txt
+pip install -r requirements.txt
+
+# 4. Install Qiskit for full quantum circuit functionality (not just simplified mode)
+pip install qiskit qiskit-aer
+
+# 5. Launch the application
+python bb84.py
+```
+
+## 📚 Educational Value
+The project clearly demonstrates:
+- Why 50% of bits are discarded when bases don't match (this is normal, not an error).
+- How the formula QBER = 0.25 × p + noise determines channel security.
+- Why BB84 protocol loses its security without error correction and privacy amplification procedures when noise level exceeds 11%.
+
+## 🛠 Technologies
+- **GUI:** tkinter, ttk
+- **Mathematics and Graphs:** numpy, matplotlib
+- **Quantum Computing (optional):** qiskit
+- **Cryptography:** hashlib (for entropy hashing demonstration)
+
+## 📄 License
+This project is distributed under the MIT License. See the LICENSE file for details.
+
+##  Contributing
+
+This project has a scientific research foundation (Research Work at Kurgan State University) and is under active development. Any help in the form of code, documentation, or scientific consultation is welcome!
+
+If you want to contribute, please review the priority development areas formulated within this research:
+
+## 🚀 Priority Tasks (Roadmap):
+
+### ⚛️ Deep Qiskit Integration:
+  Transition from the current probabilistic model to explicit use of state vectors, density matrices, and unitary operators for more rigorous physical modeling.
+
+### 🌐 3D State Visualization:
+  Add interactive Bloch sphere visualization to clearly demonstrate how qubit quantum states change when passing through the channel and during Eve's attack.
+
+### 🛡️ Advanced Attack Implementation:
+  Add PNS (Photon Number Splitting) attack model to demonstrate vulnerabilities of real laser sources (multi-photon pulses), as opposed to the idealized intercept-resend model.
+
+### 🌫️ Improved Decoherence Model:
+  Implement more sophisticated natural channel noise models (e.g., phase or amplitude damping channels) to make the simulator more accurately reflect limitations of real optical communication lines.
+
+### 🔄 Support for New Protocols:
+  Expand simulator functionality to work with entanglement-based protocols (e.g., E91) or the SARG04 protocol.
+
+### 📊 Data Export:
+  Add the ability to export experimental results (QBER tables, σ values) to .csv or .xlsx formats for further independent statistical analysis.
+
