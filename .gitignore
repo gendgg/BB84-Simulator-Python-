@@ -2,6 +2,7 @@
 venv/
 env/
 ENV/
+.venv/
 
 # Python
 __pycache__/
@@ -9,13 +10,31 @@ __pycache__/
 *$py.class
 *.so
 .Python
+build/
+dist/
+*.egg-info/
+
+# Тесты и покрытие
+.pytest_cache/
+.coverage
+htmlcov/
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*.sublime-*
 
 # ОС
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Локальные данные
+*.log
+*.csv
+*.xlsx
