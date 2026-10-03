@@ -8,17 +8,22 @@
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Qiskit](https://img.shields.io/badge/Qiskit-Optional-purple.svg)
 
-## 📸 Скриншоты
- 1. Вкладка BB84:
-   <img width="1247" height="1079" alt="image" src="https://github.com/user-attachments/assets/c7e0025f-ca8a-4cd5-8570-a3f7c33d3ebc" />
- 2. Атака Евы:
-   <img width="1247" height="1076" alt="image" src="https://github.com/user-attachments/assets/5bc8c3b2-89ce-4dcb-b553-c088c94cd587" />
- 3. Генерация и сравнение ключей:
-   <img width="1247" height="1075" alt="image" src="https://github.com/user-attachments/assets/bb1bc241-0bbf-4cd9-bbd1-50b4156193ef" />
- 4. Графики:
-   <img width="1247" height="1079" alt="image" src="https://github.com/user-attachments/assets/4ed1427f-465b-48e9-8d49-f9c3210aff0b" />
- 5. Результаты измерений и соответствующие им выводы:
-   <img width="1250" height="1079" alt="image" src="https://github.com/user-attachments/assets/0a87da2f-a2e6-42d2-bac4-55545b7c92f4" />
+## 📸 Скриншоты / Screenshots
+ 1. Вкладка BB84 /  BB84 Tab::
+   <img width="1823" height="1080" alt="image" src="https://github.com/user-attachments/assets/64d5f03e-aad6-4a67-8212-e9000b286afc" />
+
+ 2. Атака Евы / Eve's Attack::
+   <img width="1825" height="1080" alt="image" src="https://github.com/user-attachments/assets/8476106f-6477-4a64-9d62-ed5f979f6adc" />
+
+ 3. Генерация и сравнение ключей / Key Generation and Comparison::
+   <img width="1824" height="1080" alt="image" src="https://github.com/user-attachments/assets/061a2af5-9c33-4ecd-b29b-05d416a82b46" />
+
+ 4. Графики / Graphs::
+   <img width="1823" height="1080" alt="image" src="https://github.com/user-attachments/assets/101a3c8b-bee6-48b3-9dca-735f68036c32" />
+
+ 5. Результаты измерений и соответствующие им выводы /  Measurement Results and Conclusions::
+    <img width="1822" height="1080" alt="image" src="https://github.com/user-attachments/assets/915ef163-2937-434e-973b-9f13f5afb05d" />
+
 
 ## ✨ Возможности
 - **Симуляция протокола BB84:** Генерация квантового ключа с учетом выбора базисов Алисой и Бобом.
@@ -40,100 +45,14 @@ python -m venv venv && venv\Scripts\activate
 # Для macOS / Linux 
 # python3 -m venv venv && source venv/bin/activate
 
-# 3. Устанавливаем все необходимые библиотеки из файла requirements.txt
-pip install -r requirements.txt
+### 3. Установка зависимостей
 
-# 4. Устанавливаем Qiskit для полноценной работы с квантовыми схемами, а не в упрощенном режиме
-pip install qiskit qiskit-aer
-
-# 5. Запускаем приложение 
-python bb84.py
-
-## 📚 Образовательная ценность
-Проект наглядно демонстрирует:
-Почему 50% битов отбрасываются при несовпадении базисов (это норма, а не ошибка).
-Как формула QBER = 0.25 × p + шум определяет безопасность канала.
-Почему при уровне шума > 11% протокол BB84 теряет свою безопасность без процедур исправления ошибок и усиления приватности.
-
-## 🛠 Технологии
-GUI: tkinter, ttk
-Математика и графики: numpy, matplotlib
-Квантовые вычисления (опционально): qiskit
-Криптография: hashlib (для демонстрации хеширования энтропии)
-
-## 📄 Лицензия
-Этот проект распространяется под лицензией MIT. Подробности в файле LICENSE.
-
-## 🤝 Вклад в проект
-
-Этот проект имеет научно-исследовательскую базу (НИР Курганского государственного университета) и находится в стадии активного развития. Любая помощь в виде кода, документации или научных консультаций приветствуется!
-Если вы хотите внести свой вклад, ознакомьтесь с приоритетными направлениями развития, сформулированными в рамках данного исследования:
-## 🚀 Приоритетные задачи (Roadmap):
-
-# ⚛️ Глубокая интеграция с Qiskit: 
-  Перевод текущей вероятностной модели на явное использование волновых векторов, матриц плотности и унитарных операторов для более строгого физического моделирования.
-# 🌐 3D-визуализация состояний: 
-  Добавление интерактивного отображения сферы Блоха для наглядной демонстрации того, как меняются квантовые состояния кубитов при прохождении через канал и при атаке Евы.
-# 🛡️ Реализация сложных атак: 
-  Добавление модели атаки PNS (Photon Number Splitting) для демонстрации уязвимостей реальных лазерных источников (многофотонных импульсов), в отличие от идеализированной модели intercept-resend.
-# 🌫️ Улучшенная модель декогеренции: 
-  Внедрение более сложных моделей естественного шума канала (например, фазовая или амплитудная демпфирующая среда), чтобы симулятор точнее отражал ограничения реальных оптических линий связи.
-# 🔄 Поддержка новых протоколов: 
-  Расширение функционала симулятора для работы с протоколами на запутанных состояниях (например, E91) или протоколом SARG04.
-# 📊 Экспорт данных: 
-  Добавление возможности выгрузки результатов экспериментов (таблиц QBER, значений σ) в форматы .csv или .xlsx для дальнейшей независимой статистической обработки.
-
-=== ENG ===
-
-## 🔐 BB84 Quantum Cryptography Simulator
-
-An interactive educational simulator for the BB84 quantum key distribution protocol with a graphical user interface. This project is designed to study the fundamentals of quantum cryptography, the impact of channel noise (decoherence), and interception attacks (Eve's attack) on communication security.
-
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
-![Qiskit](https://img.shields.io/badge/Qiskit-Optional-purple.svg)
-
-## 📸 Screenshots
- 1. BB84 Tab:
-   <img width="1247" height="1079" alt="image" src="https://github.com/user-attachments/assets/c7e0025f-ca8a-4cd5-8570-a3f7c33d3ebc" />
- 2. Eve's Attack:
-   <img width="1247" height="1076" alt="image" src="https://github.com/user-attachments/assets/5bc8c3b2-89ce-4dcb-b553-c088c94cd587" />
- 3. Key Generation and Comparison:
-   <img width="1247" height="1075" alt="image" src="https://github.com/user-attachments/assets/bb1bc241-0bbf-4cd9-bbd1-50b4156193ef" />
- 4. Graphs:
-   <img width="1247" height="1079" alt="image" src="https://github.com/user-attachments/assets/4ed1427f-465b-48e9-8d49-f9c3210aff0b" />
- 5. Measurement Results and Conclusions:
-   <img width="1250" height="1079" alt="image" src="https://github.com/user-attachments/assets/0a87da2f-a2e6-42d2-bac4-55545b7c92f4" />
-
-##  Features
-- **BB84 Protocol Simulation:** Quantum key generation accounting for Alice and Bob's basis choices.
-- **Channel Noise Modeling:** Configurable natural noise (decoherence) level with observation of its impact on QBER (Quantum Bit Error Rate).
-- **Eve's Attack:** Visualization of photon interception demonstrating why eavesdropping in quantum cryptography always leaves traces (detection threshold ~11%).
-- **Entropy Generation:** Comparison of a simple random number generator with a hybrid method (time, chaotic systems, system parameters).
-- **Visualization:** Plotting QBER dependence on attack strength using `matplotlib`.
-- **Qiskit Support:** If the Qiskit library is installed, the simulation uses real quantum circuits (state vectors); otherwise, it operates in a simplified probabilistic mode.
-
-## 🚀 Installation and Launch
+**Обязательные библиотеки:**
 
 ```bash
-# 1. Clone the repository and navigate to its folder
-git clone https://github.com/gendgg/project.git
-cd project
-
-# 2. Create and activate a virtual environment (recommended for dependency isolation)
-# For Windows:
-python -m venv venv && venv\Scripts\activate
-# For macOS / Linux:
-# python3 -m venv venv && source venv/bin/activate
-
-# 3. Install all required libraries from requirements.txt
-pip install -r requirements.txt
-
-# 4. Install Qiskit for full quantum circuit functionality (not just simplified mode)
-pip install qiskit qiskit-aer
-
-# 5. Launch the application
-python bb84.py
+pip install customtkinter>=5.2.0
+pip install matplotlib>=3.5.0
+pip install numpy>=1.20.0
 ```
 
 ## 📚 Educational Value
