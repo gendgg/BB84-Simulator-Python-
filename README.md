@@ -7,6 +7,7 @@ An interactive educational simulator of the BB84 quantum key distribution protoc
 ![Python](https://img.shields.io/badge/Python-3.13+-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Qiskit](https://img.shields.io/badge/Qiskit-Optional-purple.svg)
+![CustomTkinter](https://img.shields.io/badge/CustomTkinter-5.2.2-blueviolet.svg)
 
 ## 📸 Описание вкладок / Description of the inserts
  1. Вкладка BB84 /  BB84 Tab:
