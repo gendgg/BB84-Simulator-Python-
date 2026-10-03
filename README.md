@@ -61,8 +61,8 @@ An interactive educational simulator of the BB84 quantum key distribution protoc
 ### 1. Клонирование репозитория / Clone the repository
 
 ```bash
-git clone https://github.com/gendgg/project.git
-cd project
+git clone https://github.com/gendgg/BB84-Simulator-Python-.git
+cd BB84-Simulator-Python-
 ```
 
 ### 2. Создание виртуального окружения / Create a virtual environmen
