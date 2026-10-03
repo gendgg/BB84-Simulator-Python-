@@ -1,5 +1,3 @@
-=== RUS ===
-
 ## 🔐 Квантовый криптографический симулятор BB84
 
 Интерактивный образовательный симулятор протокола квантового распределения ключей BB84 с графическим интерфейсом. Проект предназначен для изучения основ квантовой криптографии, влияния шума канала (декогеренции) и атак перехвата (Eve's attack) на безопасность связи.
@@ -8,21 +6,31 @@
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Qiskit](https://img.shields.io/badge/Qiskit-Optional-purple.svg)
 
-## 📸 Скриншоты / Screenshots
- 1. Вкладка BB84 /  BB84 Tab::
+## 📸 Описание вкладок / Description of the inserts
+ 1. Вкладка BB84 /  BB84 Tab:
+    Базовый обмен ключом без атаки. Показывает генерацию битов, выбор базисов, отбрасывание ~50%, формирование ключа. Плюс шифрование сообщения полученным ключом.
+    (Basic key exchange without an attack. Shows bit generation, basis selection, discarding ~50%, key formation. Plus encryption of the message using the obtained key.)
    <img width="1823" height="1080" alt="image" src="https://github.com/user-attachments/assets/64d5f03e-aad6-4a67-8212-e9000b286afc" />
 
- 2. Атака Евы / Eve's Attack::
+ 2. Атака Евы / Eve's Attack:
+    Intercept-resend атака. Настройка силы атаки (0–100%) и шума канала (0–30%). Расчёт QBER, автоматическое обнаружение Евы при QBER > 11%.
+    (Intercept-resend attack. Attack strength setting (0–100%) and channel noise (0–30%). QBER calculation, automatic detection of Eve when QBER > 11%.)
    <img width="1825" height="1080" alt="image" src="https://github.com/user-attachments/assets/8476106f-6477-4a64-9d62-ed5f979f6adc" />
 
- 3. Генерация и сравнение ключей / Key Generation and Comparison::
+ 3. Генерация и сравнение ключей / Key Generation and Comparison:
+    Сравнение простого и квантового ключа. Метрика качества — сбалансированность нулей и единиц.
+    (Comparison of a simple and a quantum key. Quality metric — balance of zeros and ones.)
    <img width="1824" height="1080" alt="image" src="https://github.com/user-attachments/assets/061a2af5-9c33-4ecd-b29b-05d416a82b46" />
 
- 4. Графики / Graphs::
+ 4. Графики / Graphs:
+    Зависимость QBER(p) и ступенчатая функция обнаружения Евы.
+    (The dependence QBER(p) and the step function of Eve’s detection.)
    <img width="1823" height="1080" alt="image" src="https://github.com/user-attachments/assets/101a3c8b-bee6-48b3-9dca-735f68036c32" />
 
- 5. Результаты измерений и соответствующие им выводы /  Measurement Results and Conclusions::
-    <img width="1822" height="1080" alt="image" src="https://github.com/user-attachments/assets/915ef163-2937-434e-973b-9f13f5afb05d" />
+ 5. Результаты измерений и соответствующие им выводы /  Measurement Results and Conclusions:
+    Сводная таблица, регрессионный анализ, статистическая проверка, выводы.
+    (Summary table, regression analysis, statistical testing, conclusions.)
+   <img width="1822" height="1080" alt="image" src="https://github.com/user-attachments/assets/915ef163-2937-434e-973b-9f13f5afb05d" />
 
 
 ## ✨ Возможности
@@ -35,15 +43,26 @@
 
 ## 🚀 Установка и запуск
 
-# 1. Клонируем репозиторий и переходим в его папку (замените URL на ссылку вашего репозитория)
+### 1. Клонирование репозитория
+
+```bash
 git clone https://github.com/gendgg/project.git
 cd project
+```
 
-# 2. Создаем и активируем виртуальное окружение (рекомендуется для изоляции зависимостей)
-# Для Windows:
-python -m venv venv && venv\Scripts\activate
-# Для macOS / Linux 
-# python3 -m venv venv && source venv/bin/activate
+### 2. Создание виртуального окружения
+
+**Windows:**
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+**macOS / Linux:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
 ### 3. Установка зависимостей
 
@@ -55,44 +74,153 @@ pip install matplotlib>=3.5.0
 pip install numpy>=1.20.0
 ```
 
-## 📚 Educational Value
-The project clearly demonstrates:
-- Why 50% of bits are discarded when bases don't match (this is normal, not an error).
-- How the formula QBER = 0.25 × p + noise determines channel security.
-- Why BB84 protocol loses its security without error correction and privacy amplification procedures when noise level exceeds 11%.
+**Опционально — Qiskit:**
 
-## 🛠 Technologies
-- **GUI:** tkinter, ttk
-- **Mathematics and Graphs:** numpy, matplotlib
-- **Quantum Computing (optional):** qiskit
-- **Cryptography:** hashlib (for entropy hashing demonstration)
+```bash
+pip install qiskit qiskit-aer
+```
 
-## 📄 License
-This project is distributed under the MIT License. See the LICENSE file for details.
+### 4. Запуск
 
-##  Contributing
+```bash
+python bb84.py
+```
 
-This project has a scientific research foundation (Research Work at Kurgan State University) and is under active development. Any help in the form of code, documentation, or scientific consultation is welcome!
+## 🎨 Установка CustomTkinter
 
-If you want to contribute, please review the priority development areas formulated within this research:
+Проект использует **CustomTkinter** — библиотеку для современных GUI. Она **не входит** в стандартную поставку Python.
 
-## 🚀 Priority Tasks (Roadmap):
+### Установка
 
-### ⚛️ Deep Qiskit Integration:
-  Transition from the current probabilistic model to explicit use of state vectors, density matrices, and unitary operators for more rigorous physical modeling.
+```bash
+pip install customtkinter
+```
 
-### 🌐 3D State Visualization:
-  Add interactive Bloch sphere visualization to clearly demonstrate how qubit quantum states change when passing through the channel and during Eve's attack.
+### Если несколько версий Python
 
-### 🛡️ Advanced Attack Implementation:
-  Add PNS (Photon Number Splitting) attack model to demonstrate vulnerabilities of real laser sources (multi-photon pulses), as opposed to the idealized intercept-resend model.
+```bash
+py -3.13 -m pip install customtkinter
+```
 
-### 🌫️ Improved Decoherence Model:
-  Implement more sophisticated natural channel noise models (e.g., phase or amplitude damping channels) to make the simulator more accurately reflect limitations of real optical communication lines.
+### Проверка
 
-### 🔄 Support for New Protocols:
-  Expand simulator functionality to work with entanglement-based protocols (e.g., E91) or the SARG04 protocol.
+```bash
+python -c "import customtkinter; print(customtkinter.__version__)"
+```
 
-### 📊 Data Export:
-  Add the ability to export experimental results (QBER tables, σ values) to .csv or .xlsx formats for further independent statistical analysis.
+Должно вывести версию, например `5.2.2`.
 
+### Возможные проблемы
+
+| Проблема | Решение |
+|----------|---------|
+| `ModuleNotFoundError: No module named 'customtkinter'` | Библиотека в другом Python — проверьте интерпретатор |
+| `pip: command not found` | Запустите `python -m ensurepip --upgrade` |
+| Окно не появляется | Версия 6.0.0 может быть несовместима с Python 3.13 — используйте 5.2.2 |
+| IDE не видит библиотеку | Установите через настройки IDE (PyCharm: File → Settings → Python Interpreter) |
+
+### Рекомендуемая версия
+
+```bash
+pip install customtkinter==5.2.2
+```
+
+## 💻 Системные требования
+
+**Минимальные:**
+- Python 3.8+
+- 4 ГБ ОЗУ
+- 200 МБ свободного места
+
+**Рекомендуемые:**
+- Python 3.10–3.13
+- 8 ГБ ОЗУ
+- 500 МБ (с Qiskit)
+
+**Обязательные зависимости:**
+- customtkinter >= 5.2.0
+- matplotlib >= 3.5.0
+- numpy >= 1.20.0
+
+**Опциональные:**
+- qiskit >= 0.40.0
+- qiskit-aer >= 0.12.0
+
+**Протестировано на:**
+- Windows 10
+- Python 3.13.7
+- CustomTkinter 5.2.2
+
+## 📐 Ключевые формулы
+
+**QBER при intercept-resend атаке:**
+
+```
+QBER = 0.25 × p + шум × (1 − 0.25 × p)
+```
+
+где:
+- `p` — доля перехваченных фотонов (сила атаки)
+- `шум` — уровень естественного шума канала
+
+**Порог безопасности BB84:** `QBER > 11%` → протокол небезопасен
+
+**Критическая сила атаки:** `p_крит = 11% / 0.25 = 0.44`
+
+## 📐 Ключевые формулы
+
+**QBER при intercept-resend атаке:**
+
+```
+QBER = 0.25 × p + шум × (1 − 0.25 × p)
+```
+
+где:
+- `p` — доля перехваченных фотонов (сила атаки)
+- `шум` — уровень естественного шума канала
+
+**Порог безопасности BB84:** `QBER > 11%` → протокол небезопасен
+
+**Критическая сила атаки:** `p_крит = 11% / 0.25 = 0.44`
+
+## 🔬 Результаты исследования
+
+Проект прошёл экспериментальную верификацию в рамках НИР Курганского государственного университета.
+
+**Параметры эксперимента:**
+- Длина ключа: N = 1000 бит
+- Диапазон силы атаки: p = 0.2 … 0.7
+- Повторов на каждое p: 10
+- Всего запусков: 60
+
+**Результаты:**
+
+| Параметр | Значение |
+|----------|----------|
+| Экспериментальный коэффициент | 0.2492 ± 0.0061 |
+| Теоретический коэффициент | 0.2500 |
+| Коэффициент детерминации R² | 0.9974 |
+| Средняя относительная погрешность | 1.41% |
+| Максимальное отклонение | 3.13% (при p = 0.6) |
+| t-критерий Стьюдента | 0.131 |
+| Критическое значение t (α=0.05) | 2.776 |
+| Критическая сила атаки p_крит | 0.44 |
+
+**Вывод:** экспериментальные данные статистически не отличаются от теоретической модели QBER = 0.25·p.
+
+## ❓ Частые вопросы
+
+**Почему 50% битов отбрасывается?**
+Алиса и Боб выбирают базисы случайно. Совпадают примерно в 50% случаев. Только эти биты можно использовать.
+
+**Почему при шуме > 11% протокол не работает?**
+Порог 11% — теоретический предел BB84. При большем QBER нельзя отличить шум от атаки.
+
+**Что такое декогеренция?**
+Необратимая утрата квантовой когерентности при взаимодействии с окружением. В QKD — источник естественных ошибок.
+
+**Зачем нужен Qiskit?**
+Без Qiskit — упрощённая вероятностная модель. С Qiskit — реальные квантовые схемы. Для обучения достаточно первого.
+
+**Можно использовать для реальной криптографии?**
+Нет. Это образовательный инструмент. Для реальной защиты нужны настоящие QKD-системы.
