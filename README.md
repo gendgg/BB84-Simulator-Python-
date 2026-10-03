@@ -1,8 +1,10 @@
-## 🔐 Квантовый криптографический симулятор BB84
+## 🔐 Квантовый криптографический симулятор BB84 / BB84 Quantum Cryptography Simulator
 
 Интерактивный образовательный симулятор протокола квантового распределения ключей BB84 с графическим интерфейсом. Проект предназначен для изучения основ квантовой криптографии, влияния шума канала (декогеренции) и атак перехвата (Eve's attack) на безопасность связи.
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+An interactive educational simulator of the BB84 quantum key distribution protocol with a graphical user interface. Designed to study the fundamentals of quantum cryptography, the impact of channel noise (decoherence), and interception attacks (Eve's attack) on communication security.
+
+![Python](https://img.shields.io/badge/Python-3.13+-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Qiskit](https://img.shields.io/badge/Qiskit-Optional-purple.svg)
 
@@ -33,24 +35,36 @@
    <img width="1822" height="1080" alt="image" src="https://github.com/user-attachments/assets/915ef163-2937-434e-973b-9f13f5afb05d" />
 
 
-## ✨ Возможности
-- **Симуляция протокола BB84:** Генерация квантового ключа с учетом выбора базисов Алисой и Бобом.
-- **Моделирование шума канала:** Настройка уровня естественного шума (декогеренции) и наблюдение за его влиянием на QBER (Quantum Bit Error Rate).
-- **Атака Евы:** Визуализация перехвата фотонов и демонстрация того, почему подслушивание в квантовой криптографии всегда оставляет следы (порог обнаружения ~11%).
-- **Генерация энтропии:** Сравнение простого генератора случайных чисел с гибридным методом (время, хаотические системы, системные параметры).
-- **Визуализация:** Построение графиков зависимости QBER от силы атаки с использованием `matplotlib`.
-- **Поддержка Qiskit:** Если установлена библиотека Qiskit, симуляция использует реальные квантовые схемы (волновые векторы), иначе работает в упрощенном вероятностном режиме.
+## ✨ Возможности / Features
 
-## 🚀 Установка и запуск
+- **Симуляция протокола BB84:** Генерация квантового ключа с учетом выбора базисов Алисой и Бобом.  
+  *(BB84 Protocol Simulation: Quantum key generation accounting for Alice and Bob's basis choices.)*
 
-### 1. Клонирование репозитория
+- **Моделирование шума канала:** Настройка уровня естественного шума (декогеренции) и наблюдение за его влиянием на QBER (Quantum Bit Error Rate).  
+  *(Channel Noise Modeling: Configurable natural noise (decoherence) level with observation of its impact on QBER — Quantum Bit Error Rate.)*
+
+- **Атака Евы:** Визуализация перехвата фотонов и демонстрация того, почему подслушивание в квантовой криптографии всегда оставляет следы (порог обнаружения ~11%).  
+  *(Eve's Attack: Visualization of photon interception demonstrating why eavesdropping in quantum cryptography always leaves traces — detection threshold ~11%.)*
+
+- **Генерация энтропии:** Сравнение простого генератора случайных чисел с гибридным методом (время, хаотические системы, системные параметры).  
+  *(Entropy Generation: Comparison of a simple random number generator with a hybrid method — time, chaotic systems, system parameters.)*
+
+- **Визуализация:** Построение графиков зависимости QBER от силы атаки с использованием `matplotlib`.  
+  *(Visualization: Plotting QBER dependence on attack strength using `matplotlib`.)*
+
+- **Поддержка Qiskit:** Если установлена библиотека Qiskit, симуляция использует реальные квантовые схемы (волновые векторы), иначе работает в упрощенном вероятностном режиме.  
+  *(Qiskit Support: If the Qiskit library is installed, the simulation uses real quantum circuits (state vectors); otherwise it operates in a simplified probabilistic mode.)*
+
+## 🚀 Установка и запуск / Installation and Launch
+
+### 1. Клонирование репозитория / Clone the repository
 
 ```bash
 git clone https://github.com/gendgg/project.git
 cd project
 ```
 
-### 2. Создание виртуального окружения
+### 2. Создание виртуального окружения / Create a virtual environmen
 
 **Windows:**
 ```bash
@@ -64,7 +78,7 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-### 3. Установка зависимостей
+### 3. Установка зависимостей / Install dependencies
 
 **Обязательные библиотеки:**
 
@@ -80,29 +94,29 @@ pip install numpy>=1.20.0
 pip install qiskit qiskit-aer
 ```
 
-### 4. Запуск
+### 4. Запуск / Launch
 
 ```bash
 python bb84.py
 ```
 
-## 🎨 Установка CustomTkinter
+## 🎨 Установка CustomTkinter / CustomTkinter Installation
 
 Проект использует **CustomTkinter** — библиотеку для современных GUI. Она **не входит** в стандартную поставку Python.
 
-### Установка
+### Установка / Installation
 
 ```bash
 pip install customtkinter
 ```
 
-### Если несколько версий Python
+### Если несколько версий Python / If you have multiple Python versions
 
 ```bash
 py -3.13 -m pip install customtkinter
 ```
 
-### Проверка
+### Проверка / Verification
 
 ```bash
 python -c "import customtkinter; print(customtkinter.__version__)"
@@ -110,7 +124,7 @@ python -c "import customtkinter; print(customtkinter.__version__)"
 
 Должно вывести версию, например `5.2.2`.
 
-### Возможные проблемы
+### Возможные проблемы / Possible Issues
 
 | Проблема | Решение |
 |----------|---------|
@@ -119,108 +133,37 @@ python -c "import customtkinter; print(customtkinter.__version__)"
 | Окно не появляется | Версия 6.0.0 может быть несовместима с Python 3.13 — используйте 5.2.2 |
 | IDE не видит библиотеку | Установите через настройки IDE (PyCharm: File → Settings → Python Interpreter) |
 
-### Рекомендуемая версия
+### Рекомендуемая версия / Recommended Version
 
 ```bash
 pip install customtkinter==5.2.2
 ```
 
-## 💻 Системные требования
+## 💻 Системные требования / System Requirements
 
-**Минимальные:**
+**Минимальные / Minimum:**
 - Python 3.8+
 - 4 ГБ ОЗУ
 - 200 МБ свободного места
 
-**Рекомендуемые:**
+**Рекомендуемые / Recommended:**
 - Python 3.10–3.13
 - 8 ГБ ОЗУ
 - 500 МБ (с Qiskit)
 
-**Обязательные зависимости:**
+**Обязательные зависимости / Required dependencies:**
 - customtkinter >= 5.2.0
 - matplotlib >= 3.5.0
 - numpy >= 1.20.0
 
-**Опциональные:**
+**Опциональные / Optional:**
 - qiskit >= 0.40.0
 - qiskit-aer >= 0.12.0
 
-**Протестировано на:**
+**Протестировано на / Tested on:**
 - Windows 10
+- 16 ГБ ОЗУ
+- Ndivia RTX 2060
+- AMD Ryzen 5 7000 Series
 - Python 3.13.7
 - CustomTkinter 5.2.2
-
-## 📐 Ключевые формулы
-
-**QBER при intercept-resend атаке:**
-
-```
-QBER = 0.25 × p + шум × (1 − 0.25 × p)
-```
-
-где:
-- `p` — доля перехваченных фотонов (сила атаки)
-- `шум` — уровень естественного шума канала
-
-**Порог безопасности BB84:** `QBER > 11%` → протокол небезопасен
-
-**Критическая сила атаки:** `p_крит = 11% / 0.25 = 0.44`
-
-## 📐 Ключевые формулы
-
-**QBER при intercept-resend атаке:**
-
-```
-QBER = 0.25 × p + шум × (1 − 0.25 × p)
-```
-
-где:
-- `p` — доля перехваченных фотонов (сила атаки)
-- `шум` — уровень естественного шума канала
-
-**Порог безопасности BB84:** `QBER > 11%` → протокол небезопасен
-
-**Критическая сила атаки:** `p_крит = 11% / 0.25 = 0.44`
-
-## 🔬 Результаты исследования
-
-Проект прошёл экспериментальную верификацию в рамках НИР Курганского государственного университета.
-
-**Параметры эксперимента:**
-- Длина ключа: N = 1000 бит
-- Диапазон силы атаки: p = 0.2 … 0.7
-- Повторов на каждое p: 10
-- Всего запусков: 60
-
-**Результаты:**
-
-| Параметр | Значение |
-|----------|----------|
-| Экспериментальный коэффициент | 0.2492 ± 0.0061 |
-| Теоретический коэффициент | 0.2500 |
-| Коэффициент детерминации R² | 0.9974 |
-| Средняя относительная погрешность | 1.41% |
-| Максимальное отклонение | 3.13% (при p = 0.6) |
-| t-критерий Стьюдента | 0.131 |
-| Критическое значение t (α=0.05) | 2.776 |
-| Критическая сила атаки p_крит | 0.44 |
-
-**Вывод:** экспериментальные данные статистически не отличаются от теоретической модели QBER = 0.25·p.
-
-## ❓ Частые вопросы
-
-**Почему 50% битов отбрасывается?**
-Алиса и Боб выбирают базисы случайно. Совпадают примерно в 50% случаев. Только эти биты можно использовать.
-
-**Почему при шуме > 11% протокол не работает?**
-Порог 11% — теоретический предел BB84. При большем QBER нельзя отличить шум от атаки.
-
-**Что такое декогеренция?**
-Необратимая утрата квантовой когерентности при взаимодействии с окружением. В QKD — источник естественных ошибок.
-
-**Зачем нужен Qiskit?**
-Без Qiskit — упрощённая вероятностная модель. С Qiskit — реальные квантовые схемы. Для обучения достаточно первого.
-
-**Можно использовать для реальной криптографии?**
-Нет. Это образовательный инструмент. Для реальной защиты нужны настоящие QKD-системы.
